@@ -152,7 +152,7 @@ $(".carte").click(function () {
 $("#box1").click(function () {
     $("#box1").animate({ left: "200px" });
     $("#box1").animate({ top: "200px" }, function () {
-        $("#box1").css({ background: "red" });
+        $("#box1").css({ background: "yellow" });
         $("#box1").animate({ left: "0px" });
         $("#box1").animate({ top: "0px" });
     });
