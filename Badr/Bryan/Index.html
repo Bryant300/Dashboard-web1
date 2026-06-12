@@ -7,560 +7,557 @@
     <title>Dashboard jQuery</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
-<<<<<<< HEAD
-
-    <style>
+    <<<<<<< HEAD <style>
         /* =========================
-           RESET
+        RESET
         ========================= */
 
 
 
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
         }
 
         /* =========================
-           BASE
+        BASE
         ========================= */
         body {
-            font-family: Arial, sans-serif;
-            background: #f0f0f0;
-            color: #111;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+        color: #111;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
         }
 
         /* =========================
-           HEADER
+        HEADER
         ========================= */
         header {
-            background: #1a1a1a;
-            color: white;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 50px;
+        background: #1a1a1a;
+        color: white;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
         }
 
         header h1 {
-            font-size: 1.1rem;
-            font-weight: bold;
-            letter-spacing: 0.02em;
+        font-size: 1.1rem;
+        font-weight: bold;
+        letter-spacing: 0.02em;
         }
 
         .header-buttons {
-            display: flex;
-            gap: 10px;
-            align-items: center;
+        display: flex;
+        gap: 10px;
+        align-items: center;
         }
 
         /* =========================
-           BUTTONS (global)
+        BUTTONS (global)
         ========================= */
         button {
-            padding: 6px 14px;
-            background: white;
-            color: #111;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 13px;
-            transition: background 0.2s ease, border-color 0.2s ease;
+        padding: 6px 14px;
+        background: white;
+        color: #111;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        transition: background 0.2s ease, border-color 0.2s ease;
         }
 
         button:hover {
-            background: #e8e8e8;
-            border-color: #aaa;
+        background: #e8e8e8;
+        border-color: #aaa;
         }
 
         /* =========================
-           LAYOUT
+        LAYOUT
         ========================= */
         .layout {
-            display: flex;
-            flex: 1;
+        display: flex;
+        flex: 1;
         }
 
         /* =========================
-           SIDEBAR
+        SIDEBAR
         ========================= */
         .sidebar {
-            width: 0;
-            overflow: hidden;
-            background: #1a1a1a;
-            color: white;
-            transition: width 0.3s ease;
-            flex-shrink: 0;
+        width: 0;
+        overflow: hidden;
+        background: #1a1a1a;
+        color: white;
+        transition: width 0.3s ease;
+        flex-shrink: 0;
         }
 
         .sidebar.open {
-            width: 200px;
+        width: 200px;
         }
 
         .sidebar-inner {
-            width: 200px;
-            padding: 20px 16px;
+        width: 200px;
+        padding: 20px 16px;
         }
 
         .sidebar-inner h2 {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 14px;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 14px;
         }
 
         .sidebar-inner ul {
-            list-style: none;
+        list-style: none;
         }
 
         .sidebar-inner li {
-            padding: 10px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            transition: background 0.2s;
+        padding: 10px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+        transition: background 0.2s;
         }
 
         .sidebar-inner li:hover {
-            background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.1);
         }
 
         .sidebar-inner li.activeNav {
-            background: #2563eb;
-            color: white;
+        background: #2563eb;
+        color: white;
         }
 
         /* =========================
-           MAIN CONTENT
+        MAIN CONTENT
         ========================= */
         main {
-            flex: 1;
-            padding: 20px 24px;
-            overflow-x: hidden;
+        flex: 1;
+        padding: 20px 24px;
+        overflow-x: hidden;
         }
 
         /* =========================
-           PAGES
+        PAGES
         ========================= */
         .page {
-            display: none;
+        display: none;
         }
 
         .page.activePage {
-            display: block;
+        display: block;
         }
 
         /* =========================
-           HOME — HERO
+        HOME — HERO
         ========================= */
         .hero {
-            background: linear-gradient(135deg, royalblue, purple);
-            color: white;
-            padding: 60px;
-            border-radius: 20px;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
+        background: linear-gradient(135deg, royalblue, purple);
+        color: white;
+        padding: 60px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
         }
 
         .hero h2 {
-            font-size: 45px;
-            margin-bottom: 15px;
+        font-size: 45px;
+        margin-bottom: 15px;
         }
 
         .hero p {
-            width: 70%;
-            line-height: 1.7;
+        width: 70%;
+        line-height: 1.7;
         }
 
         /* =========================
-           HOME — CIRCLES
+        HOME — CIRCLES
         ========================= */
         .circle-deco {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: white;
-            opacity: 0.2;
-            position: absolute;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: white;
+        opacity: 0.2;
+        position: absolute;
         }
 
         .c1 {
-            top: 20px;
-            right: 50px;
+        top: 20px;
+        right: 50px;
         }
 
         .c2 {
-            bottom: 30px;
-            right: 180px;
+        bottom: 30px;
+        right: 180px;
         }
 
         .c3 {
-            top: 120px;
-            left: 40px;
+        top: 120px;
+        left: 40px;
         }
 
         /* =========================
-           HOME — STATS
+        HOME — STATS
         ========================= */
         .stats {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
         }
 
         .statBox {
-            background: white;
-            flex: 1;
-            min-width: 220px;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
+        background: white;
+        flex: 1;
+        min-width: 220px;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
         }
 
         .statBox h3 {
-            font-size: 40px;
-            color: royalblue;
-            margin-bottom: 10px;
+        font-size: 40px;
+        color: royalblue;
+        margin-bottom: 10px;
         }
 
         /* =========================
-           DASHBOARD — CARDS
+        DASHBOARD — CARDS
         ========================= */
         .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-bottom: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 28px;
         }
 
         .card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 14px 18px;
-            min-width: 140px;
-            cursor: pointer;
-            position: relative;
-            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 14px 18px;
+        min-width: 140px;
+        cursor: pointer;
+        position: relative;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
         }
 
         .card:hover {
-            border: rgb(65, 105, 225) 2px solid;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-            transform: translateY(-2px);
+        border: rgb(65, 105, 225) 2px solid;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        transform: translateY(-2px);
         }
 
         .card h3 {
-            font-size: 0.95rem;
-            font-weight: bold;
-            margin-bottom: 4px;
-            color: #111;
+        font-size: 0.95rem;
+        font-weight: bold;
+        margin-bottom: 4px;
+        color: #111;
         }
 
         .card p {
-            font-size: 0.8rem;
-            color: #666;
+        font-size: 0.8rem;
+        color: #666;
         }
 
         /* =========================
-           SECTION TITLE
+        SECTION TITLE
         ========================= */
         .section-title {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #111;
-            margin-bottom: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #111;
+        margin-bottom: 10px;
         }
 
         /* =========================
-           CONTROLS
+        CONTROLS
         ========================= */
         .controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 28px;
         }
 
         /* =========================
-           SQUARES
+        SQUARES
         ========================= */
         .square-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            align-items: center;
-            margin-bottom: 20px;
-            min-height: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 20px;
+        min-height: 80px;
         }
 
         .square {
-            width: 70px;
-            height: 70px;
-            border-radius: 10px;
-            cursor: pointer;
-            flex-shrink: 0;
-            position: relative;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-            transition: border-radius 0.4s ease;
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        cursor: pointer;
+        flex-shrink: 0;
+        position: relative;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        transition: border-radius 0.4s ease;
         }
 
         .circle {
-            border-radius: 50%;
+        border-radius: 50%;
         }
 
         #square1 {
-            background: #ef4444;
+        background: #ef4444;
         }
 
         #square2 {
-            background: #3b82f6;
+        background: #3b82f6;
         }
 
         #square3 {
-            background: #22c55e;
+        background: #22c55e;
         }
 
         #square4 {
-            background: #a855f7;
+        background: #a855f7;
         }
 
         /* =========================
-           NOTIFICATION
+        NOTIFICATION
         ========================= */
         .notification {
-            display: none;
-            margin-bottom: 20px;
-            padding: 10px 16px;
-            background: #2563eb;
-            color: white;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            font-weight: bold;
-            width: fit-content;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        display: none;
+        margin-bottom: 20px;
+        padding: 10px 16px;
+        background: #2563eb;
+        color: white;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: bold;
+        width: fit-content;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
         }
 
         /* =========================
-           FORM BOX
+        FORM BOX
         ========================= */
         .form-box {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 18px 20px;
-            display: inline-block;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 18px 20px;
+        display: inline-block;
         }
 
         .form-box h3 {
-            font-size: 0.95rem;
-            font-weight: bold;
-            margin-bottom: 12px;
-            color: #111;
+        font-size: 0.95rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+        color: #111;
         }
 
         .form-box input[type="text"] {
-            display: block;
-            padding: 7px 10px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 13px;
-            outline: none;
-            margin-bottom: 12px;
-            width: 200px;
-            background: white;
-            color: #111;
-            transition: border-color 0.2s;
+        display: block;
+        padding: 7px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 13px;
+        outline: none;
+        margin-bottom: 12px;
+        width: 200px;
+        background: white;
+        color: #111;
+        transition: border-color 0.2s;
         }
 
         .form-box input[type="text"]:focus {
-            border-color: #2563eb;
+        border-color: #2563eb;
         }
 
         .form-box input[type="text"]:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            background: #f5f5f5;
+        opacity: 0.5;
+        cursor: not-allowed;
+        background: #f5f5f5;
         }
 
         .form-actions {
-            display: flex;
-            gap: 8px;
+        display: flex;
+        gap: 8px;
         }
 
         /* =========================
-           FAKE PAGE (Profil / Paramètres)
+        FAKE PAGE (Profil / Paramètres)
         ========================= */
         .fakePage {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            padding: 40px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        padding: 40px;
         }
 
         .fakePage h2 {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 12px;
-            color: #111;
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+        color: #111;
         }
 
         .fakePage p {
-            font-size: 0.9rem;
-            color: #555;
+        font-size: 0.9rem;
+        color: #555;
         }
 
         /* =========================
-           ROTATE ANIMATION
+        ROTATE ANIMATION
         ========================= */
         .rotate {
-            transform: rotate(360deg);
-            transition: transform 1s ease;
+        transform: rotate(360deg);
+        transition: transform 1s ease;
         }
 
         /* =========================
-           DARK MODE
+        DARK MODE
         ========================= */
         body.dark {
-            background: #020617;
-            color: white;
+        background: #020617;
+        color: white;
         }
 
         body.dark header {
-            background: #0f172a;
+        background: #0f172a;
         }
 
         body.dark main {
-            background: #020617;
+        background: #020617;
         }
 
         body.dark .section-title {
-            color: white;
+        color: white;
         }
 
         body.dark .statBox {
-            background: #1e293b;
+        background: #1e293b;
         }
 
         body.dark .statBox p {
-            color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.7);
         }
 
         body.dark .card {
-            background: #1e293b;
-            border-color: #334155;
+        background: #1e293b;
+        border-color: #334155;
         }
 
         body.dark .card:hover {
-            border: rgb(65, 105, 225) 2px solid;
+        border: rgb(65, 105, 225) 2px solid;
         }
 
 
 
         body.dark .card h3 {
-            color: white;
+        color: white;
         }
 
         body.dark .card p {
-            color: rgba(255, 255, 255, 0.55);
+        color: rgba(255, 255, 255, 0.55);
         }
 
         body.dark button {
-            background: #1e293b;
-            color: white;
-            border-color: #334155;
+        background: #1e293b;
+        color: white;
+        border-color: #334155;
         }
 
         body.dark button:hover {
-            background: #334155;
-            border-color: #475569;
+        background: #334155;
+        border-color: #475569;
         }
 
         body.dark .form-box {
-            background: #1e293b;
-            border-color: #334155;
+        background: #1e293b;
+        border-color: #334155;
         }
 
         body.dark .form-box h3 {
-            color: white;
+        color: white;
         }
 
         body.dark .form-box input[type="text"] {
-            background: #0f172a;
-            border-color: #334155;
-            color: white;
+        background: #0f172a;
+        border-color: #334155;
+        color: white;
         }
 
         body.dark .form-box input[type="text"]:disabled {
-            background: #0a0f1e;
+        background: #0a0f1e;
         }
 
         body.dark .sidebar {
-            background: #0f172a;
+        background: #0f172a;
         }
 
         body.dark .fakePage {
-            background: #1e293b;
-            border-color: #334155;
+        background: #1e293b;
+        border-color: #334155;
         }
 
         body.dark .fakePage h2 {
-            color: white;
+        color: white;
         }
 
         body.dark .fakePage p {
-            color: rgba(255, 255, 255, 0.6);
-=======
-    <link rel="stylesheet" href="style.css">
-    <style>
-        #userCard {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 16px;
-            padding: 24px;
-            max-width: 400px;
-            margin: 24px auto;
-            color: #fffaf0;
-        }
+        color: rgba(255, 255, 255, 0.6);
+        =======
+        <link rel="stylesheet" href="style.css">
+        <style>
+            #userCard {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                background: #1e1e1e;
+                border: 1px solid #333;
+                border-radius: 16px;
+                padding: 24px;
+                max-width: 400px;
+                margin: 24px auto;
+                color: #fffaf0;
+            }
 
-        .avatar {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background: #ff4d2e;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: white;
-            flex-shrink: 0;
-        }
+            .avatar {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                background: #ff4d2e;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                font-weight: bold;
+                color: white;
+                flex-shrink: 0;
+            }
 
-        .userInfo h3 {
-            margin: 0 0 6px;
-            font-size: 20px;
-            color: #ff4d2e;
-        }
+            .userInfo h3 {
+                margin: 0 0 6px;
+                font-size: 20px;
+                color: #ff4d2e;
+            }
 
-        .userInfo p {
-            margin: 4px 0;
-            font-size: 13px;
-            color: rgba(255,250,240,0.6);
->>>>>>> badr
-        }
-    </style>
+            .userInfo p {
+                margin: 4px 0;
+                font-size: 13px;
+                color: rgba(255, 250, 240, 0.6);
+            }
+        </style>
 </head>
 
 <body>
@@ -724,18 +721,18 @@
             /* =========================
                INFOS UTILISATEUR (URL params)
             ========================= */
-          const username = sessionStorage.getItem("username");
-const email    = sessionStorage.getItem("email");
-const date     = new Date().toLocaleDateString("fr-FR", {
-    day: "2-digit", month: "long", year: "numeric"
-});
+            const username = sessionStorage.getItem("username");
+            const email = sessionStorage.getItem("email");
+            const date = new Date().toLocaleDateString("fr-FR", {
+                day: "2-digit", month: "long", year: "numeric"
+            });
 
-if (username) {
-    $("#userAvatar").text(username.charAt(0).toUpperCase());
-    $("#userName").text(username);
-    $("#userEmail").text(email || "Email non disponible");
-    $("#userDate").text("Inscrit le " + date);
-}
+            if (username) {
+                $("#userAvatar").text(username.charAt(0).toUpperCase());
+                $("#userName").text(username);
+                $("#userEmail").text(email || "Email non disponible");
+                $("#userDate").text("Inscrit le " + date);
+            }
             /* =========================
                NAVIGATION SIDEBAR
             ========================= */
@@ -773,7 +770,7 @@ if (username) {
                COUNTERS ANIMÉS (Home)
             ========================= */
             $(".counter").each(function () {
-                let target  = $(this).data("target");
+                let target = $(this).data("target");
                 let counter = $(this);
 
                 $({ countNum: 0 }).animate({ countNum: target }, {
@@ -890,17 +887,17 @@ if (username) {
 
         });
         const username = sessionStorage.getItem("username");
-const email    = sessionStorage.getItem("email");
-const date     = new Date().toLocaleDateString("fr-FR", {
-    day: "2-digit", month: "long", year: "numeric"
-});
+        const email = sessionStorage.getItem("email");
+        const date = new Date().toLocaleDateString("fr-FR", {
+            day: "2-digit", month: "long", year: "numeric"
+        });
 
-if (username) {
-    $("#userAvatar").text(username.charAt(0).toUpperCase());
-    $("#userName").text(username);
-    $("#userEmail").text(email || "Email non disponible");
-    $("#userDate").text("Inscrit le " + date);
-}
+        if (username) {
+            $("#userAvatar").text(username.charAt(0).toUpperCase());
+            $("#userName").text(username);
+            $("#userEmail").text(email || "Email non disponible");
+            $("#userDate").text("Inscrit le " + date);
+        }
     </script>
 
 </body>
